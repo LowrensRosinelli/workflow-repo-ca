@@ -63,15 +63,15 @@ They cover:
 
 **`isActivePath`**
 
-- returns `true` when current path matches `href` exactly  
-- returns `true` for root (`"/"`) when path is `"/"` or `"/index.html"`  
-- returns `true` when current path includes the `href`  
-- returns `false` when paths don’t match  
+- returns `true` when current path matches `href` exactly
+- returns `true` for root (`"/"`) when path is `"/"` or `"/index.html"`
+- returns `true` when current path includes the `href`
+- returns `false` when paths don’t match
 
 **`getUserName`**
 
-- returns the user name from storage when a user exists  
-- returns `null` when there is no user in storage  
+- returns the user name from storage when a user exists
+- returns `null` when there is no user in storage
 
 Run unit tests:
 
@@ -95,10 +95,10 @@ Covers:
 
 Covers:
 
-- go to the home page  
-- wait for the venue list  
-- click the first venue card  
-- check that the venue details page has **“Venue details”** in the heading  
+- go to the home page
+- wait for the venue list
+- click the first venue card
+- check that the venue details page has **“Venue details”** in the heading
 
 Run all e2e tests:
 
@@ -141,5 +141,4 @@ For the course assignment, the open Pull Request is:
 That PR link is what I submit on Moodle.  
 If the commit history looks a bit chaotic, that’s just me fighting with tests late at night 🙃 hehe
 
-Lowrens Rosinelli
---
+## Lowrens Rosinelli
