@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     es2021: true,
@@ -8,19 +9,44 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  rules: {
-    // Egne regler kan legges her senere
-  },
-  globals: {
-    // Test-globals (Vitest / Playwright)
-    describe: "readonly",
-    it: "readonly",
-    test: "readonly",
-    expect: "readonly",
-    beforeAll: "readonly",
-    beforeEach: "readonly",
-    afterAll: "readonly",
-    afterEach: "readonly",
-    vi: "readonly",
-  },
+  overrides: [
+    {
+      // Vitest test files
+      files: ["js/utils/**/*.test.js"],
+      env: {
+        browser: true,
+        es2021: true,
+      },
+      globals: {
+        vi: "readonly",
+        describe: "readonly",
+        it: "readonly",
+        expect: "readonly",
+      },
+    },
+    {
+      // Playwright tests (Node + process.env)
+      files: ["test/**/*.js"],
+      env: {
+        node: true,
+        es2021: true,
+      },
+      globals: {
+        process: "readonly",
+      },
+    },
+    {
+      // Config-filer som kjører i Node (module.exports osv.)
+      files: [
+        "tailwind.config.js",
+        "vitest.config.mjs",
+        "playwright.config.mjs",
+      ],
+      env: {
+        node: true,
+        es2021: true,
+      },
+    },
+  ],
+  rules: {},
 };
